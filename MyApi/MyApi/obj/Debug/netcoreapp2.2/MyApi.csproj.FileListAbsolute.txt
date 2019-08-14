@@ -1,0 +1,14 @@
+D:\codes\Shareif_Project\MyApi\MyApi\bin\Debug\netcoreapp2.2\MyApi.deps.json
+D:\codes\Shareif_Project\MyApi\MyApi\bin\Debug\netcoreapp2.2\MyApi.runtimeconfig.json
+D:\codes\Shareif_Project\MyApi\MyApi\bin\Debug\netcoreapp2.2\MyApi.runtimeconfig.dev.json
+D:\codes\Shareif_Project\MyApi\MyApi\bin\Debug\netcoreapp2.2\MyApi.dll
+D:\codes\Shareif_Project\MyApi\MyApi\bin\Debug\netcoreapp2.2\MyApi.pdb
+D:\codes\Shareif_Project\MyApi\MyApi\obj\Debug\netcoreapp2.2\MyApi.csprojResolveAssemblyReference.cache
+D:\codes\Shareif_Project\MyApi\MyApi\obj\Debug\netcoreapp2.2\MyApi.csproj.CoreCompileInputs.cache
+D:\codes\Shareif_Project\MyApi\MyApi\obj\Debug\netcoreapp2.2\MyApi.RazorAssemblyInfo.cache
+D:\codes\Shareif_Project\MyApi\MyApi\obj\Debug\netcoreapp2.2\MyApi.RazorAssemblyInfo.cs
+D:\codes\Shareif_Project\MyApi\MyApi\obj\Debug\netcoreapp2.2\MyApi.AssemblyInfoInputs.cache
+D:\codes\Shareif_Project\MyApi\MyApi\obj\Debug\netcoreapp2.2\MyApi.AssemblyInfo.cs
+D:\codes\Shareif_Project\MyApi\MyApi\obj\Debug\netcoreapp2.2\MyApi.RazorTargetAssemblyInfo.cache
+D:\codes\Shareif_Project\MyApi\MyApi\obj\Debug\netcoreapp2.2\MyApi.dll
+D:\codes\Shareif_Project\MyApi\MyApi\obj\Debug\netcoreapp2.2\MyApi.pdb

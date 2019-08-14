@@ -1,0 +1,113 @@
+<div class="logout">
+  <button mat-stroked-button (click)="onLogout()">Log Out</button>
+</div>
+
+<form class="example-form mt-5 mb-5" #formRef="ngForm">
+
+  <div class="text-danger" *ngIf="nameRef.invalid">
+    <p *ngIf="nameRef.errors?.rangeLength">3 digits and 10 digits</p>
+    <p *ngIf="nameRef.errors?.pattern">Wrong Name</p>
+  </div>
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" placeholder="Title" required [rangeLength]="[3, 20]" [pattern]="'^[a-zA-Z ]*$'" #nameRef="ngModel"
+      name="Title" [(ngModel)]="new_news.Title">
+  </mat-form-field>
+
+
+  <div class="text-danger" *ngIf="DescRef.invalid">
+    <p *ngIf="DescRef.errors?.rangeLength">20 characters (up to 200)</p>
+  </div>
+ 
+  <div>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Leave More Details" required [rangeLength]="[10, 200]" #DescRef="ngModel" name="Description"
+    [(ngModel)]="new_news.Description"></textarea>
+  </mat-form-field>
+</div>
+
+<div class="form-group">
+  <!-- <label class="col-sm-3 control-label">Image</label> -->
+  <img [src]="imageUrl" style="width:100px;height:100px">
+  <div class="col-sm-4">
+    <input class="form-control"
+    type="file"
+    name="ImageName"
+    [(ngModel)]="new_news.ImageName"
+    #imageref="ngModel"
+    required
+    (change)="upload($event);handleFileInput($event.target.files)"
+    >
+
+  </div>
+  <div class="col-sm-4" *ngIf="imageref.invalid">
+    <span style="color:red" *ngIf="imageref.errors?.required && imageref.touched">*</span>
+  </div>
+</div>
+
+
+  <div>
+    <button class="mr-3" mat-raised-button [disabled]="formRef.invalid" (click)="addNews()">Add</button>
+
+    <button mat-raised-button [disabled]="formRef.invalid" (click)="EditNews()">Update</button>
+  </div>
+</form>
+
+  
+    <div fxLayout="row wrap" 
+    fxLayout.lt-sm="column" 
+    fxLayoutGap="50px" 
+    fxLayoutAlign="flex-start">
+
+<mat-card class="example-card" *ngFor="let element of news" class="mb-3">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{element.Title}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="element.ImageName" class="mx-auto d-block" style="height:250px; width:250px;" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      {{element.Description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="GetNewsData(element.ID)">Edit</button>
+    <button mat-button (click)="DeleteNews(element.ID)">Delete</button>
+  </mat-card-actions>
+</mat-card>
+<!-- </div> -->
+</div>
+
+<!-- <table mat-table [dataSource]="news" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="ID">
+    <th class="m-2" mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
+    <td class="m-2" mat-cell *matCellDef="let element"> {{element.ID}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Title">
+    <th class="p-2" mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+    <td class="p-2" mat-cell *matCellDef="let element"> {{element.Title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Description">
+    <th class="p-2" mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+    <td class="p-2" mat-cell *matCellDef="let element"> {{element.Description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ImageName">
+    <th class="p-2" mat-header-cell *matHeaderCellDef mat-sort-header> Image </th>
+    <td class="p-2" mat-cell *matCellDef="let element"> <img [src]="element.ImageName" height="50" width="50"> </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Operations">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-stroked-button (click)="GetNewsData(element.ID)">Edit</button>
+      <button mat-stroked-button class="m-3" (click)="DeleteNews(element.ID)">Delete</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table> -->
